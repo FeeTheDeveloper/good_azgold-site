@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="wpGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE680"/>
+      <stop offset="40%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#B38F24"/>
+      <stop offset="100%" stop-color="#997300"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer crest ring -->
+  <circle cx="300" cy="360" r="250" stroke="url(#wpGold)" stroke-width="3"/>
+  <!-- Inner crest ring -->
+  <circle cx="300" cy="360" r="214" stroke="url(#wpGold)" stroke-width="2"/>
+
+  <!-- Monogram "A" spine -->
+  <path d="M300 170 L185 550 M300 170 L415 550 M246 388 L354 388"
+        stroke="url(#wpGold)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Top sparkle accent -->
+  <path d="M300 40 L300 90 M275 65 L325 65 M282 47 L318 83 M318 47 L282 83"
+        stroke="url(#wpGold)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Bottom flourish -->
+  <path d="M220 690 Q300 730 380 690" stroke="url(#wpGold)" stroke-width="3" stroke-linecap="round"/>
+</svg>
