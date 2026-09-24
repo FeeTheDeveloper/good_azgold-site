@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Good Az Gold Productions</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/symbol/gsa_logo.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .auth-section {
+    min-height: calc(100vh - var(--header-h));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+  }
+  .auth-card {
+    width: min(100% - 2rem, 420px);
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow);
+  }
+  #sign-in { display: flex; justify-content: center; }
+</style>
+</head>
+<body>
+
+<div class="bg-noise" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav container" aria-label="Primary">
+    <a href="/" class="logo" aria-label="Good Az Gold Productions home">
+      <img src="assets/logo/symbol/gsa_logo.png" alt="Good Az Gold symbol" class="logo-symbol" width="1454" height="720">
+      <span class="logo-text">Good Az Gold</span>
+    </a>
+  </nav>
+</header>
+
+<main>
+  <section class="auth-section">
+    <div class="auth-card">
+      <div id="sign-in"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; <span id="year"></span> Good Az Gold Productions.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Clerk publishable key is public by design and safe to expose client-side. -->
+<script
+  async
+  crossorigin="anonymous"
+  data-clerk-publishable-key="pk_live_Y2xlcmsuZ29vZGF6Z29sZHByb2R1Y3Rpb25zLmNvbSQ"
+  src="https://clerk.goodazgoldproductions.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+  type="text/javascript"
+></script>
+<script>
+  window.addEventListener('load', async function () {
+    await window.Clerk.load();
+    if (window.Clerk.user) {
+      window.location.href = '/';
+      return;
+    }
+    window.Clerk.mountSignIn(document.getElementById('sign-in'));
+  });
+</script>
+</body>
+</html>
